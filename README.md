@@ -1,15 +1,15 @@
 # My_Notes
-Rest api and mixroservices
+***Rest api and mixroservices
 
 Roznica miedzy rest api to sposob na kommunikacje pomiedzy klientem a servezem przez http requests, a mickroservice to sposob na organizacje architektury na serverze, gdzie mikroservice nie powinny wymieniac sie przez rest api
 
-Target and current.target
+***Target and current.target
 
-current target - to element ktory załączono procedurę obsługi zdarzeń
+***current target - to element ktory załączono procedurę obsługi zdarzeń
 
-target - gdzie wydazylo sie to zdarzenie
+***target - gdzie wydazylo sie to zdarzenie
 
-Jak dziala przygladarka  ?
+***Jak dziala przygladarka  ?
 
     1.Wpisujemy URL (Uniform Resource Locator) w szukiwarku przegladarki. URL wyswietla ns strone, ktora uzytkownik chce odzwiedziec.
     2.Przegladarka wysyla DNS(Domain Name System) na DNS-server, zeby otzymac IP-adress servera, na ktorym sie znajduje strona. DNS-server przetwarza nazwe domeny (naprzyklad, [www.example.com](http://www.example.com/)) na odpowiedni IP-adress
@@ -21,11 +21,11 @@ Jak dziala przygladarka  ?
     Request Method(**GET HEAD POST PUT DELETE CONNECT OPTIONS TRACE**
  **PATCH)
 
- (Headers) – to metadane, które są przesyłane wraz z żądaniem i zawierają dodatkowe informacje o żądaniu, takie jak typ zawartości, uwierzytelnianie, buforowanie i inne parametry
+ ***(Headers) – to metadane, które są przesyłane wraz z żądaniem i zawierają dodatkowe informacje o żądaniu, takie jak typ zawartości, uwierzytelnianie, buforowanie i inne parametry
 
- Body – jest używane tylko w niektórych metodach żądania, takich jak POST lub PUT. Zawiera dane, które klient wysyła do serwera, na przykład formularz do wysłania lub obiekt JSON
+ ***Body – jest używane tylko w niektórych metodach żądania, takich jak POST lub PUT. Zawiera dane, które klient wysyła do serwera, na przykład formularz do wysłania lub obiekt JSON
 
- CSSOM to zestaw API, które pozwalają na modyfikowanie CSS za pomocą JavaScriptu bez konieczności przeładowywania strony
+ ***CSSOM to zestaw API, które pozwalają na modyfikowanie CSS za pomocą JavaScriptu bez konieczności przeładowywania strony
 
  Critical Rendering Path (CRP) – to proces, który przeglądarka wykonuje, aby przekształcić HTML, CSS i JavaScript w wizualny interfejs na ekranie użytkownika
  1.Przeglądarka otrzymuje kod HTML dokumentu z serwera
@@ -39,32 +39,220 @@ Jak dziala przygladarka  ?
  Optymalizacja CRP odgrywa ważną rolę w tworzeniu szybko ładujących się i responsywnych stron internetowych. Obejmuje to minimalizowanie użycia zasobów, optymalizację CSS i JavaScript, a także stosowanie metod, takich jak leniwe ładowanie zasobów i asynchroniczne ładowanie skryptów, aby przyspieszyć proces renderowania strony
 
 
-CORS (Cross-Origin Resource Sharing).
+***CORS (Cross-Origin Resource Sharing).
  Mekanizm, który wykorzystuje dodatkowe nagłówki HTTP, aby umożliwić agentowi użytkownika uzyskiwanie zezwoleń na dostęp do wybranych zasobów z serwera na źródle (domenie), innym niż ta, którą obecnie używa strona, nazywa się 
 
 
 
-MVC (Model-View-Controller)
+****MVC (Model-View-Controller)
 Wzor projektowy, który umożliwia efektywne oddzielenie modelu danych (gdzie wszystko obsługuje serwer), wyświetlania i obsługi akcji (kontroler wykonuje odpowiednie operacje i przekazuje je do widoku)
 
-Wzorcami projektowymi (Design Patterns)
+***Wzorcami projektowymi (Design Patterns)
 To gotowe do użycia rozwiązania często występujących problemów w programowaniu
 
-"use strict" to dyrektywa w JavaScript, która wprowadza tryb restrykcyjny, zmieniając sposób działania języka w celu uniknięcia pewnych powszechnych błędów i poprawy bezpieczeństwa
+***"use strict" to dyrektywa w JavaScript, która wprowadza tryb restrykcyjny, zmieniając sposób działania języka w celu uniknięcia pewnych powszechnych błędów i poprawy bezpieczeństwa
 wprowadza szereg ograniczeń, takich jak:
 Zakaz używania niezadeklarowanych zmiennych.
 Uniemożliwienie przypisania wartości do tylko do odczytu (np. do stałych).
 Zmiana sposobu działania funkcji, w tym rozróżnianie nazw argumentów w przypadku funkcji o tej samej nazwie.
 
-let
+***let
 Służy do deklarowania zmiennych, które mogą być zmieniane (modyfikowane) w późniejszym czasie.
 Ma blokowy zakres (block scope), co oznacza, że jest dostępny tylko w obrębie bloku kodu, w którym został zadeklarowany (np. wewnątrz pętli, funkcji, warunku).
 Nie jest hoistowane jak var, czyli nie można odwołać się do zmiennej przed jej zadeklarowaniem.
 
-const
+***const
 Służy do deklarowania zmiennych, które nie mogą być modyfikowane po ich inicjalizacji (są stałymi).
 Również ma blokowy zakres (block scope).
 Musi być zainicjalizowana w momencie deklaracji
 
 let jest używane do zmiennych, których wartość może się zmieniać.
 const jest używane do zmiennych, których wartość nie powinna być zmieniana po przypisaniu.
+
+***Zmienne zadeklarowane za pomocą var mogą być aktualizowane i deklarowane ponownie
+
+***Scope (zakres zmiennych)
+Zakres zmiennych to część programu, w której możemy odwołać się do zmiennej, funkcji lub obiektu.
+Zakresy pomagają ukrywać zmienne przed niepożądanym dostępem i dzielić kod na logiczne bloki
+
+***Różnice między funkcją strzałkową a zwykłą funkcją
+Nie można używać jako konstruktora
+Lekkie deklarowanie
+Składnia
+
+
+***W czym jest roznica pomiedzy Сookie, Local Storage и Session Storage
+
+Cookies:
+Przechowują małe ilości danych (zwykle do 4 KB na domenę). Najczęściej używane do wymiany danych z serwerem
+
+Local Storage:
+Pozwala przechowywać większe ilości danych (zwykle od 5 do 10 MB na domenę). Nie znika po zamknięciu karty lub ponownym uruchomieniu przeglądarki.
+
+Session Storage:
+Również przeznaczony do przechowywania małych ilości danych, podobnie jak Cookies, ale dane sesji są usuwane po zamknięciu karty lub przeglądarki.
+
+
+***KISS (Keep It Simple, Stupid) – „Rób to prosto, głupcze”
+Zasada sugeruje, aby kod był jak najprostszy i łatwy do zrozumienia.
+
+***DRY (Don't Repeat Yourself) – „Nie powtarzaj się”
+Każdy fragment kodu powinien mieć jedno, unikalne miejsce.
+
+***Promise & Async await
+Promise Promise to obiekt w JavaScript, który reprezentuje wartość,
+która będzie dostępna w przyszłości (np. po zakończeniu operacji asynchronicznej, takiej jak pobieranie danych z serwera).
+
+***Async/Await
+Async/Await to nowocześniejszy i czytelniejszy sposób obsługi Promisów, który pozwala pisać kod asynchroniczny w stylu synchronicznym.
+
+***e.preventDefault() + e.stopPropagation()
+Są używane do kontrolowania zachowania zdarzeń w przeglądarce.
+
+e.preventDefault() – zatrzymuje domyślne działanie przeglądarki
+Przykład: zapobiega przeładowaniu strony po wysłaniu formularza
+
+e.stopPropagation() – zatrzymuje propagację zdarzenia w górę drzewa DOM
+Przykład: kliknięcie w przycisk nie uruchomi zdarzenia w elemencie nadrzędnym
+
+***Event Loop
+Event Loop to mechanizm, który pozwala asynchronicznemu kodowi działać w JavaScript bez blokowania głównego wątku.
+ Dzięki niemu JavaScript (który jest jednoprotokółowy) może wykonywać operacje asynchroniczne, nie zatrzymując głównego wątku aplikacji
+
+Jednoprotokółowość - JavaScript wykonuje jeden kawałek kodu na raz (wątek główny).
+Event Loop zarządza kolejką zadań, która zawiera makro i mikrotaski.
+
+Mikrotaski (np. Promise) mają wyższy priorytet. Są wykonywane po każdym synchronizowanym zadaniu, ale przed makrotaskami.
+Makrotaski to głównie zdarzenia, takie jak setTimeout(), setInterval() itp
+
+
+
+```jsx
+console.log('Start');
+
+fetch('https://api.example.com/data')
+  .then(response => response.json())  // callback #1
+  .then(data => {
+    console.log('Data processed inside callback:', data);
+  })  // callback #2
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+console.log('End');
+
+
+1.fetch inicjuje asynchroniczny żądanie do serwera.
+2.Gdy żądanie jest zakończone, Callback #1 (funkcja przekazana do .then()) trafia do Callback Queue (kolejki zadań)
+3.Event Loop obserwuje Call Stack. Kiedy stos wywołań (Call Stack) jest pusty (po wykonaniu np. console.log('End')),
+ Event Loop pobiera Callback #1 z kolejki i umieszcza go w stosie wywołań do wykonania
+4.Callback #1 jest wykonywany. Jeśli zwróci nowy Promise, to Callback #2 (funkcja w kolejnym .then()) trafi do Callback Queue
+5.Gdy stos wywołań znowu jest pusty, Event Loop przenosi Callback #2 z Callback Queue do stosu wywołań, aby go wykonać
+6.Wewnątrz Callback #2 dane z serwera są już dostępne (np. w zmiennej data) i mogą zostać przetworzone.
+
+***Map & forEach
+forEach to metoda tablicy w JavaScript, która wykonuje określoną funkcję dla każdego elementu w tablicy
+forEach nie zwraca nowej tablicy, jesli chce utworzyc nowa tablica, w tedy lepej uzyc map
+
+map to metoda tablicy w JavaScript, która wykonuje funkcję dla każdego elementu tablicy i zwraca nową tablicę z wynikami tych funkcji
+
+
+***Script async defer
+Atrybut async jest używany w tagu <script> w HTML, aby umożliwić asynchroniczne ładowanie skryptów JavaScript.
+ Gdy skrypt jest załadowany z atrybutem async, przeglądarka nie czeka na jego załadowanie i wykonanie przed renderowaniem reszty strony
+ defer zapewnia, że skrypty będą ładowane asynchronicznie, ale ich wykonywanie będzie opóźnione do momentu, aż cała strona zostanie w pełni załadowana
+
+ ***Semantyczne tagi
+  (Semantic Tags)to tagi, które mają logiczne znaczenie i pomagają w zrozumieniu struktury strony naprzyklad header, footer, ahead, nav
+
+  ***Iterator
+  to obiekt, który pozwala na iterowanie po tablice, obiekty, mapy, zbiory itd.
+   Iterator jest odpowiedzialny za dostarczanie kolejnych elementów z kolekcji jeden po drugim, aż do momentu, gdy wszystkie elementy zostaną przeiterowane
+
+   ***Generator
+   Specjalny typ funkcji do wstrzymywania i wznawiania wykonania funkcji. Zwykle używany do sekwencyjnego generowania wartości
+
+   ***new
+   Kiedy tworzysz instancję obiektu za pomocą operatora new, właściwości i metody zdefiniowane w funkcji konstruktora są dodawane do protokołu (prototype) utworzonego obiektu.
+   Oznacza to, że te właściwości i metody są dostępne dla wszystkich instancji,
+   które zostały utworzone przy użyciu tego konstruktora, dzięki mechanizmowi dziedziczenia prototypów w JavaScript.
+
+   1.Tworzenie nowego obiektu: Operator new tworzy nowy pusty obiekt.
+    2.Przypisanie prototypu: Prototyp nowego obiektu zostaje ustawiony na prototype funkcji konstruktora.
+    3.Wykonanie funkcji konstruktora: Funkcja konstruktora jest wywoływana z przypisaniem this do nowego obiektu.
+    4.Zwracanie obiektu: Jeśli funkcja konstruktora nie zwróci jawnie obiektu, new zwróci nowo utworzony obiekt.
+
+    function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person('Alice', 25);
+const person2 = new Person('Bob', 30);
+
+console.log(person1.name);  // "Alice"
+console.log(person2.age);   // 30
+
+***this
+
+this — to odniesienie do obiektu, w kontekście którego jest wywoływane. Wartość this zależy od miejsca, w którym funkcja jest wywoływana
+Wartość this wewnątrz funkcji może się zmieniać w zależności od tego, jak funkcja została wywołana. this jest dynamiczne, a jego wartość zależy od kontekstu wywołania funkcji.
+
+1.W metodzie obiektu: Jeśli funkcja jest wywoływana jako metoda obiektu, this odnosi się do tego obiektu.
+const person = {
+  name: 'Alice',
+  greet: function() {
+    console.log(this.name); // this odnosi się do obiektu person
+  }
+};
+
+person.greet(); // "Alice"
+
+2.W funkcji konstruktora: Kiedy funkcja jest używana jako konstruktor (z operatoriem new), this odnosi się do nowo utworzonego obiektu.
+function Person(name) {
+  this.name = name;
+}
+
+const person = new Person('Alice');
+console.log(person.name); // "Alice", ponieważ this odnosi się do nowego obiektu
+
+3.W funkcji strzałkowej: Funkcje strzałkowe nie mają własnego this. Zamiast tego this w funkcji strzałkowej jest dziedziczone z kontekstu, w którym została utworzona.
+const person = {
+  name: 'Alice',
+  greet: function() {
+    const arrowFunction = () => {
+      console.log(this.name); // this odnosi się do obiektu person
+    };
+    arrowFunction();
+  }
+};
+
+person.greet(); // "Alice"
+
+Zmiana wartości this za pomocą call, apply i bind: Można jawnie ustawić wartość this za pomocą metod call, apply i bind.
+function greet() {
+  console.log(this.name);
+}
+
+const person = { name: 'Alice' };
+greet.call(person); // "Alice", ponieważ `this` zostało ustawione na obiekt person
+
+***map & set
+Map to kolekcja par klucz/wartość, gdzie każdy klucz jest unikalny. Map zachowuje kolejność dodawania elementów, podczas gdy obiekt tego nie robi
+Set to kolekcja, która przechowuje unikalne wartości, gwarantując, że w niej nie ma powtarzających się elementów
+
+
+***Boxing & unboxing
+Podczas wywoływania metod na wartościach prymitywnych, JavaScript automatycznie opakowuje wartość w obiekt i wywołuje metodę na tym obiekcie.
+ Po wykonaniu metody, obiekt jest automatycznie "rozpakowywany" na wartość prymitywną.
+
+ ***SPA & PWA
+ SPA (Single Page Application) to aplikacja webowa, która dynamicznie aktualizuje HTML na stronie, bez konieczności przeładowywania całej strony
+ Przykłady SPA: Gmail, Facebook, Twitter
+ PWA (Progressive Web Application) to technologia, która umożliwia przekształcenie tradycyjnej strony internetowej w aplikację mobilną,
+  którą można zainstalować na ekranie głównym urządzenia (smartfona, tabletu) i używać jej jak natywną aplikację
+  Przyklady PWA: Pinterest, Spotify, AliExpress
+
+***Null & undefined
+  undefined to wartość, która oznacza, że zmienna została zadeklarowana, ale nie została jej przypisana żadna wartość.
+null to specjalna wartość, którą przypisujemy zmiennej, aby wyraźnie wskazać, że nie ma ona żadnej wartości 
