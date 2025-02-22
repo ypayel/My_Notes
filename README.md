@@ -256,3 +256,62 @@ Podczas wywoływania metod na wartościach prymitywnych, JavaScript automatyczni
 ***Null & undefined
   undefined to wartość, która oznacza, że zmienna została zadeklarowana, ale nie została jej przypisana żadna wartość.
 null to specjalna wartość, którą przypisujemy zmiennej, aby wyraźnie wskazać, że nie ma ona żadnej wartości 
+
+
+***Memoization(Memyzacja)
+Memyzacja to przechowywanie poprzedniej wartości funkcji
+
+
+***Private accessors(Prywatne akcesory)
+Prywatne akcesory, definiowane za pomocą symbolu #, umożliwiają enkapsulację danych poprzez tworzenie prywatnych pól i metod w klasach,
+ ograniczając zbędny dostęp z zewnątrz tej klasy
+
+
+***Callback hell
+Callback hell wiele wywołań zwrotnych (callbacków) zagnieżdżonych wewnątrz innych wywołań zwrotnych
+
+
+***Hoisting
+ to przenoszenie zadeklarowanej funkcji na górę jej zakresu widoczności. 
+ Działa tylko dla function declaration, ale nie ma zastosowania do function expression, bez przeładowywania strony podczas interakcji z użytkownikiem.
+
+ ***Closure(Zamknięcie)
+ Zamknięcie to możliwość funkcji uzyskania dostępu do zmiennych z nadrzędnego zakresu.
+  Jest to mechanizm realizowany poprzez istnienie ukrytej zmiennej, która zapewnia dostęp do leksykalnego środowiska.
+
+
+***Lexical Environment (leksykalne środowisko)
+  Leksykalne środowisko to ukryty obiekt zawierający listę zmiennych funkcji oraz odnośnik do nadrzędnego zakresu. Wszystkie funkcje w JavaScript są zamknięciami.
+
+***Prototypy (dziedziczenie)
+  Wszystko w JavaScript podlega dziedziczeniu. Na przykład, kiedy tworzymy obiekt, ma on metody obiektu, które są dziedziczone z Prototype Object.
+  W starszych wersjach JavaScript do modyfikowania właściwości dziedziczenia używano proto, natomiast we współczesnym JavaScript lepiej jest stosować metodę [Object.getPrototypeOf(obj)]
+
+
+***Niezmienne (Immutable) obiekty:
+W JavaScript prymitywne typy danych (np. liczby, ciągi znaków, wartości logiczne) są niezmienne.
+Podczas operacji na prymitywnych typach tworzone są nowe wartości, a stare pozostają bez zmian.
+
+Przykład niezmiennego (immutable) obiektu w JavaScript:
+
+jsx
+
+let x = 5;
+let y = x;  // Tworzona jest kopia wartości x
+x = x + 1;  // Tworzony jest nowy obiekt, a nie zmieniany stary
+console.log(x);  // Wyjście: 6
+console.log(y);  // Wyjście: 5 (wartość y pozostaje niezmieniona)
+
+
+
+***Zmienne (Mutable) obiekty:
+Obiekty w JavaScript (w tym tablice i obiekty) są zmienne.
+Zmiany w obiektach są bezpośrednio odzwierciedlane w samym obiekcie, bez tworzenia nowego obiektu.
+
+Przykład zmiennego obiektu w JavaScript:
+
+jsx
+
+let arr = [1, 2, 3];
+arr.push(4);  // Zmienia się sama tablica, a nie tworzy nowa
+console.log(arr);  // Wyjście: [1, 2, 3, 4]
