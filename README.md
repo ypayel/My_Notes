@@ -315,3 +315,152 @@ jsx
 let arr = [1, 2, 3];
 arr.push(4);  // Zmienia się sama tablica, a nie tworzy nowa
 console.log(arr);  // Wyjście: [1, 2, 3, 4]
+
+
+***Rekurencja
+Rekurencja to kiedy funkcja wywołuje sama siebie
+
+
+***Async code (asynchroniczny kod)
+Async code (asynchroniczny kod) to sposób programowania, który pozwala wykonywać operacje nieblokujące głównego wątku programu.
+ Dzięki temu aplikacja może kontynuować działanie, zamiast czekać na zakończenie czasochłonnych zadań takich jak:
+pobieranie danych z API,
+operacje na plikach,
+interakcje z bazą danych,
+
+
+
+***Callback function (funkcja zwrotna) 
+Callback function (funkcja zwrotna) to funkcja przekazywana jako argument do innej funkcji, która zostanie wywołana później, zazwyczaj po zakończeniu jakiejś operacji.
+
+
+
+***Cookies 
+HTTP cookie (web cookie, cookie przeglądarki) – to mały fragment danych wysyłany przez serwer do przeglądarki użytkownika,
+który przeglądarka może zapisać i odesłać z kolejnym żądaniem do tego samego serwera. Pozwala to między innymi sprawdzić,
+czy oba żądania pochodzą z tej samej przeglądarki (na przykład w celu uwierzytelnienia użytkownika).
+To sa danne ktore schowane na komputerze w pliku txt
+
+Cookies są wykorzystywane głównie do:
+Zarządzania sesją (logowanie, koszyki wirtualnych zakupów)
+Personalizacji (preferencje użytkownika)
+Monitorowania (śledzenia zachowania użytkownika)
+
+
+***Shadow DOM 
+Shadow DOM to technologia w przeglądarkach, która pozwala tworzyć enkapsulowane elementy DOM z własnymi stylami i logiką,
+które nie wpływają na zewnętrzny dokument i są od niego niezależne.
+
+***DOM 
+To reprezentacja dokumentu HTML w postaci drzewa znaczników,
+umożliwiająca interakcję za pomocą JavaScript (dodawanie/usuwanie elementów z drzewa, zmiana stylów elementów i wiele więcej).
+
+
+***OPP 
+OOP to sposób pisania kodu, który pozwala tworzyć obiekty na podstawie jednego obiektu.
+
+Abstrakcja – tworzenie klasy bazowej z minimalnym zestawem wspólnych metod przeznaczonych do dziedziczenia.
+Polimorfizm – zmiana funkcjonalności lub zachowania istniejącej metody lub właściwości.
+Dziedziczenie – możliwość obiektu lub klasy do bazowania na innym obiekcie lub klasie. Jest to główny mechanizm ponownego użycia kodu.
+Enkapsulacja – ukrywanie właściwości lub metod przed niepotrzebnym dostępem, np. za pomocą pól prywatnych.
+
+
+***SOLID
+S – Zasada pojedynczej odpowiedzialności (The Single Responsibility Principle) – każda klasa powinna wykonywać tylko jedno zadanie
+O – Zasada otwartości/zamkniętości (The Open/Closed Principle) – nowa funkcjonalność powinna być dodawana poprzez rozszerzenie,
+ a nie modyfikację istniejącego kodu (kod powinien być zamknięty na modyfikacje, ale otwarty na rozszerzenia).
+L – Zasada podstawienia Liskov (The Liskov Substitution Principle) – klasa dziedzicząca powinna rozszerzać funkcjonalność klasy bazowej, a nie ją zmieniać.
+I – Zasada segregacji interfejsów (The Interface Segregation Principle) – wiele dedykowanych interfejsów jest lepsze niż jeden ogólny interfejs.
+D – Zasada odwrócenia zależności (The Dependency Inversion Principle) – moduły wyższego poziomu nie powinny zależeć od modułów niższego poziomu. Oba powinny zależeć od abstrakcji.
+
+Poprawny kod 
+// Klasa do wysyłania e-maili
+class EmailService {
+  sendEmail(to, subject, body) {
+    // Wysyłanie e-maila
+    console.log(`Send message ${to}: ${subject} - ${body}`);
+  }
+}
+// Klasa do zarządzania użytkownikami
+class UserService {
+   // Konstruktor przyjmuje EmailService jako zależność
+  constructor(emailService) {
+    this.emailService = emailService;
+  }
+ // Rejestracja użytkownika i wysyłanie e-maila
+  registerUser(username, email) {
+    // Wysyłanie e-maila
+    this.emailService.sendEmail(email, "Registration", `Welcome, ${username}!`);
+  }
+}
+// Tworzymy instancję EmailService
+const emailService = new EmailService();
+// Przekazujemy ją do konstruktora UserService
+const userService = new UserService(emailService);
+userService.registerUser("John", "john@example.com");
+
+Nie poprawny kod
+// Klasa do wysyłania e-maili
+class EmailService {
+  sendEmail(to, subject, body) {
+    // Wysyłanie e-maila
+    console.log(`Send message ${to}: ${subject} - ${body}`);
+  }
+}
+// Klasa do zarządzania użytkownikami
+class UserService {
+  // Konstruktor samodzielnie tworzy zależność od EmailService
+  constructor() {
+    this.emailService = new EmailService();  // ❌ Tworzenie zależności wewnątrz klasy
+  }
+// Rejestracja użytkownika i wysyłanie e-maila
+  registerUser(username, email) {
+     // Wysyłanie e-maila
+    this.emailService.sendEmail(email, "Registration", `Welcome, ${username}!`);
+  }
+}
+// Tworzymy instancję UserService
+const userService = new UserService();
+userService.registerUser("John", "john@example.com");
+
+
+
+
+***WebSocket 
+Zapewnia możliwość wymiany danych między przeglądarką a serwerem za pomocą stałego połączenia.
+Dane są przesyłane w obu kierunkach w postaci "pakietów", bez przerywania połączenia i dodatkowych żądań HTTP.
+
+
+
+*** Server Side Events (SSE)
+Klient wysyła żądanie HTTP do serwera i pozostawia połączenie otwarte, dzięki czemu serwer może okresowo wysyłać aktualizacje do klienta przez to połączenie.
+• SSE obsługuje komunikację jednokierunkową, co oznacza, że dane mogą być wysyłane tylko z serwera do klienta.
+• Long Polling również wykorzystuje HTTP, ale w przeciwieństwie do SSE, klient wysyła żądanie do serwera, a serwer odpowiada dopiero wtedy,
+ gdy ma dane do wysłania lub po upływie określonego czasu (timeout).
+
+
+ ***Polling & Long Polling
+ Polling – co pewien czas klient wysyła żądanie do serwera.
+ Long polling – klient wysyła żądanie do serwera, które pozostaje otwarte i czeka na odpowiedź, aż zdarzy się jakieś wydarzenie lub zostanie otrzymana aktualizacja.
+
+
+
+ ***Bing, Call, Apply
+Wszystkie trzy służą do zmiany kontekstu this, jednak różnią się w sposobie użycia:
+Call i Apply natychmiast wywołują funkcję i zwracają wynik jej wykonania.
+Bind zwraca nową funkcję, którą można wywołać później.
+
+Metoda bind() tworzy nową funkcję, która przy wywołaniu ustawia jako kontekst wykonania this na podaną wartość.
+
+Metoda apply() wywołuje funkcję z określonym kontekstem this i parametrami przekazanymi w formie tablicy (lub obiektu przypominającego tablicę).
+
+
+Przyklady 
+
+apply()
+func.apply(thisArg, [argsArray])
+Metoda apply() wywołuje funkcję z określonym kontekstem this i argumentami przekazanymi w postaci tablicy (lub obiektu przypominającego tablicę).
+
+call()
+fun.call(thisArg, arg1, arg2, ...)
+Metoda call() wywołuje funkcję z określonym kontekstem this i argumentami przekazanymi jako lista (oddzielne parametry).
