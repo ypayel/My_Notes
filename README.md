@@ -464,3 +464,12 @@ Metoda apply() wywołuje funkcję z określonym kontekstem this i argumentami pr
 call()
 fun.call(thisArg, arg1, arg2, ...)
 Metoda call() wywołuje funkcję z określonym kontekstem this i argumentami przekazanymi jako lista (oddzielne parametry).
+
+
+
+React Install 
+1. Jeseli jest stara wersja npm install react-scripts@latest
+2. npm create vite@latest countries-task
+3. Wchodzimy do pliku cd nazwa-repo
+4.npm install
+5. Zeby uruchomic aplikacje npm run dev
