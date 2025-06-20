@@ -473,3 +473,10 @@ React Install
 3. Wchodzimy do pliku cd nazwa-repo
 4.npm install
 5. Zeby uruchomic aplikacje npm run dev
+
+o taki sposob mozna dolaczyc jakom wartosc za pomoca `join` {topCurrencies.join(", ")}
+
+ table-layout: fixed; - każda kolumna dostaje równą szerokość */
+
+ word-break: break-word jest przydatna np. "West African CFA franc" zawinie się w dwóch linijkach, a nie wyjdzie poza ekran. (pozwala zawiac dlugie teksty)
+
