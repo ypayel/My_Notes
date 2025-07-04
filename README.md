@@ -474,9 +474,35 @@ React Install
 4.npm install
 5. Zeby uruchomic aplikacje npm run dev
 
-o taki sposob mozna dolaczyc jakom wartosc za pomoca `join` {topCurrencies.join(", ")}
+o taki sposob mozna dolaczyc jakoms wartosc za pomoca `join` {topCurrencies.join(", ")}
 
  table-layout: fixed; - każda kolumna dostaje równą szerokość */
 
  word-break: break-word jest przydatna np. "West African CFA franc" zawinie się w dwóch linijkach, a nie wyjdzie poza ekran. (pozwala zawiac dlugie teksty)
+
+
+Context 
+
+1. Tworzy sie typ w kompononecie "Global.tsx" (zawsze powinnie byc "export const") np export const GlobalTypes
+2. I tworzymy nasz plik hook nazwa powinna zawierac "use" np. "useGlobalContext.tsx"
+2. Robimy typ podobny na nasz "GlobalTypes" w tym przypadku bedzie to "GlobalContextType" i przypisujemy nazwy typuw z naszego "GlobalType" oraz jakiego typu oni sa np. "string", "number", i td.
+3. Teraz robimy sam nasz komponent gdxie bedziemy przekazywac typy oraz stworzymy nasz provider -
+export const GlobalContext = createContext<GlobalContextType>({}as GlobalContextType);
+4.Tworzymy nasz typ provider czyli - GlobalProviderProps
+type GlobalProviderProps = {
+  children: ReactNode[] | ReactNode;
+};
+5. Tutaj tworzymy juz sam komponent providera
+export const GlobalProvider = ({ children} : GlobalProviderProps) => {
+  tutaj wpisuje swoje typy ktore chce przekazac w inne komponenty np. const [second, setSecond] = useState("");
+return (
+  <GlobalContext.Provider value={{ second, setSecond}}>
+  {children}
+  </GlobalContext.Provider>
+)
+}
+5. Owijamy cala nasza aplikacje w provider zeby my moglismy przekazywac danne we wszystkie komponenty
+<GlobalProvider>
+<App />
+</GlobalProvider>
 
