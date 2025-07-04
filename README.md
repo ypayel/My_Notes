@@ -506,3 +506,183 @@ return (
 <App />
 </GlobalProvider>
 
+
+
+
+##Proxy
+
+To wbudowany obiekt w JavaScript, który pozwala stworzyć "otoczkę" (obiekt pośredniczący) wokół innego obiektu lub tablicy, aby przechwytywać i modyfikować jego zachowanie. Posiada tzw. przechwytywacze (ang. handlers) takie jak get i set, które można skonfigurować do przechwytywania operacji takich jak odczyt lub zapis właściwości, wywołanie funkcji, iteracja
+
+Przyklad proxy: 
+const osoba = {
+  imie: "Ala",
+  wiek: 25
+};
+
+// Tworzymy obiekt Proxy
+const proxyOsoba = new Proxy(osoba, {
+  get(target, prop) {
+    console.log(`Odczytywanie właściwości: ${prop}`);
+    return target[prop]; // zwracamy oryginalną wartość
+  },
+  set(target, prop, value) {
+    console.log(`Ustawianie właściwości: ${prop} = ${value}`);
+    target[prop] = value; // ustawiamy nową wartość
+    return true; // musimy zwrócić true, aby operacja się powiodła
+  }
+});
+
+// Test działania:
+console.log(proxyOsoba.imie);      // -> log: Odczytywanie właściwości: imie
+proxyOsoba.wiek = 30;              // -> log: Ustawianie właściwości: wiek = 30
+console.log(proxyOsoba.wiek);      // -> log: Odczytywanie właściwości: wiek
+
+
+
+
+
+#HOF (funkcje wyższego rzędu)
+
+Funkcje wyższego rzędu to takie funkcje, które operują na innych funkcjach — albo przyjmują je jako argumenty, albo zwracają jako wynik.
+
+
+
+
+##HOC (Higher-Order Component / Komponent wyższego rzędu)
+
+To funkcja, która przyjmuje komponent jako argument i zwraca nowy, ulepszony komponent. HOC-y są często spotykane w zewnętrznych bibliotekach, takich jak connect w Redux czy createFragmentContainer w Relay.
+
+
+HOC:
+
+const withUser = (Component) => (props) => {
+  const user = { name: "Jan" };
+  return <Component {...props} user={user} />;
+};
+
+
+Hook:
+
+function MyComponent() {
+  const user = useUser(); // np. customowy hook
+  return <div>Witaj, {user.name}</div>;
+}
+
+
+
+
+##Typy danych (Data Types)
+
+Dzielą się na prymitywne i obiektowe number, string, boolean, bigInt, null, object, undefiend, symbol - 8;
+
+
+
+
+##Czysta funkcja
+
+To taka funkcja, która zwraca wynik tylko na podstawie przekazanych argumentów i nie powoduje efektów ubocznych
+
+
+
+
+
+##CI/CD
+CI – Continuous Integration (ciągła integracja)
+
+CD – Continuous Delivery (ciągłe dostarczanie) lub Continuous Deployment (ciągłe wdrażanie)
+
+To sposób automatyzacji rutynowych procesów takich jak budowanie projektu, testowanie, wydawanie wersji i wdrażanie (deploy).
+
+Często wiąże się to z tworzeniem pipeline (ciągu zautomatyzowanych kroków), który uruchamia się np. przed wypchnięciem zmian do głównej gałęzi (master/main)
+
+
+
+
+
+##Git Merge vs Rebase
+
+To dwa sposoby łączenia gałęzi w jedną.
+
+`git merge` łączy zmiany, tworząc nowy commit scalający (merge commit), zachowując przy tym pełną historię obu gałęzi.
+Historia zostaje rozgałęziona, ale nic nie jest tracone. Zachowuje strukturę drzewa commitów (historię rozwidleń)
+
+`git rebase` przepisuje historię commitów – przenosi lokalne commity na szczyt zaktualizowanej głównej gałęzi. 
+Tworzy prostą linię historii, jakby gałąź była tworzona na świeżo od głównej
+
+
+
+
+##Husky
+
+To narzędzie do zarządzania Git hookami oraz automatyzacji działań wykonywanych przed commitami lub przed pushami do repozytorium.
+
+
+
+
+
+##Cypress
+
+To narzędzie, które pozwala programistom tworzyć testy symulujące zachowanie użytkownika w przeglądarce
+ oraz sprawdzać działanie i poprawność funkcjonalności aplikacji.
+
+
+
+
+ ##Przechowywanie przez wartość i przez referencję
+
+Typy prymitywne (liczby, boolean, stringi) są przechowywane i porównywane przez wartość. Można bezpiecznie zmieniać wartość zmiennej, nie martwiąc się, że wpłynie to na coś innego.
+
+Typy referencyjne (obiekty, tablice) są przechowywane i porównywane przez referencję (adres w pamięci). Przy porównywaniu uwzględniany jest fakt, czy dwie zmienne wskazują na ten sam obiekt. Nawet jeśli dwa obiekty mają identyczne dane, ale są różnymi instancjami, to są różne.
+
+Zmiany wewnątrz obiektu będą widoczne wszędzie tam, gdzie istnieje referencja do tego obiektu. Bezpośrednia modyfikacja danych obiektu nazywa się mutacją. Lepiej unikać mutacji, ponieważ może prowadzić do trudnych do wykrycia błędów.
+
+Aby bezpiecznie zmieniać typ referencyjny, należy najpierw wykonać jego kopię. W ten sposób powstaje nowa referencja i zmiany nie wpływają na oryginalny obiekt.
+
+
+
+
+
+##Tworzenie obiektu bez prototypu lub bez referencji
+
+Obiekt bez prototypu można utworzyć za pomocą Object.create(null).
+Taki obiekt nie dziedziczy żadnych właściwości ani metod z Object.prototype.
+
+Obiekt bez referencji (kopię głęboką) można zrobić przy pomocy structuredClone() lub JSON.parse(JSON.stringify(obj)).
+Jednak przy takim podejściu utracimy wszystkie typy danych, które nie podlegają konwersji, np.:
+
+metody obiektu (funkcje) zostaną usunięte,
+
+obiekty Date zostaną zamienione na stringi,
+
+undefined zostanie zignorowane i nie pojawi się w nowym obiekcie.
+
+
+
+##Bazy danych SQL i NoSQL
+
+Główne różnice to:
+
+Skalowalność – NoSQL lepiej skalują się dzięki rozdzieleniu danych między wiele serwerów.
+
+Elastyczność danych – NoSQL często używa elastycznych schematów, które pozwalają na dodawanie i zmienianie pól w dokumentach bez konieczności modyfikowania całej struktury.
+
+NoSQL posiada własne API do pracy z bazą danych.
+
+Natomiast bazy SQL mają:
+
+Ścisłą, schematyczną strukturę danych.
+
+Używają języka SQL do wykonywania zapytań.
+
+
+
+##GraphQL
+
+Główną zaletą GraphQL jest to, że pozwala na żądanie tylko tych danych, które są potrzebne. Dzięki GraphQL można zmniejszyć ilość kodu zarówno po stronie serwera,
+jak i klienta, dzięki precyzyjnemu zapytaniu o dane oraz typowaniu informacji.
+
+Typ Query służy do odczytu danych z API.
+
+Typ Mutation służy do zapisu lub zmiany danych.
+
+Błędy w GraphQL są obsługiwane za pomocą specjalnego typu danych Error i zwracane w polu errors w odpowiedzi.
