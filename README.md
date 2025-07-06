@@ -1,15 +1,16 @@
 # My_Notes
-***Rest api and mixroservices
+
+\*\*\*Rest api and mixroservices
 
 Roznica miedzy rest api to sposob na kommunikacje pomiedzy klientem a servezem przez http requests, a mickroservice to sposob na organizacje architektury na serverze, gdzie mikroservice nie powinny wymieniac sie przez rest api
 
-***Target and current.target
+\*\*\*Target and current.target
 
-***current target - to element ktory załączono procedurę obsługi zdarzeń
+\*\*\*current target - to element ktory załączono procedurę obsługi zdarzeń
 
-***target - gdzie wydazylo sie to zdarzenie
+\*\*\*target - gdzie wydazylo sie to zdarzenie
 
-***Jak dziala przygladarka  ?
+\*\*\*Jak dziala przygladarka ?
 
     1.Wpisujemy URL (Uniform Resource Locator) w szukiwarku przegladarki. URL wyswietla ns strone, ktora uzytkownik chce odzwiedziec.
     2.Przegladarka wysyla DNS(Domain Name System) na DNS-server, zeby otzymac IP-adress servera, na ktorym sie znajduje strona. DNS-server przetwarza nazwe domeny (naprzyklad, [www.example.com](http://www.example.com/)) na odpowiedni IP-adress
@@ -19,49 +20,47 @@ Roznica miedzy rest api to sposob na kommunikacje pomiedzy klientem a servezem p
 
     HTTP to protokół aplikacji służący do przesyłania dokumentów hipertekstowych, takich jak HTML. Przeznaczony jest do komunikacji pomiędzy przeglądarkami internetowymi i serwerami WWW
     Request Method(**GET HEAD POST PUT DELETE CONNECT OPTIONS TRACE**
- **PATCH)
 
- ***(Headers) – to metadane, które są przesyłane wraz z żądaniem i zawierają dodatkowe informacje o żądaniu, takie jak typ zawartości, uwierzytelnianie, buforowanie i inne parametry
+\*\*PATCH)
 
- ***Body – jest używane tylko w niektórych metodach żądania, takich jak POST lub PUT. Zawiera dane, które klient wysyła do serwera, na przykład formularz do wysłania lub obiekt JSON
+\*\*\*(Headers) – to metadane, które są przesyłane wraz z żądaniem i zawierają dodatkowe informacje o żądaniu, takie jak typ zawartości, uwierzytelnianie, buforowanie i inne parametry
 
- ***CSSOM to zestaw API, które pozwalają na modyfikowanie CSS za pomocą JavaScriptu bez konieczności przeładowywania strony
+\*\*\*Body – jest używane tylko w niektórych metodach żądania, takich jak POST lub PUT. Zawiera dane, które klient wysyła do serwera, na przykład formularz do wysłania lub obiekt JSON
 
- Critical Rendering Path (CRP) – to proces, który przeglądarka wykonuje, aby przekształcić HTML, CSS i JavaScript w wizualny interfejs na ekranie użytkownika
- 1.Przeglądarka otrzymuje kod HTML dokumentu z serwera
- 2.Przeglądarka analizuje kod HTML i tworzy strukturę drzewa dokumentu, zwaną DOM (Document Object Model)
- 3.Przeglądarka ładuje zewnętrzne pliki CSS, a także osadzone i wbudowane style niezbędne do wyglądu strony. Po załadowaniu plików CSS przeglądarka tworzy CSSOM (CSS Object Model)
- 4.Przeglądarka łączy DOM i CSSOM, aby utworzyć Render Tree, który zawiera tylko te węzły DOM, które zostaną wyświetlone na ekranie, oraz odpowiadające im style
- 5.Przeglądarka określa rozmieszczenie każdego elementu w Render Tree, uwzględniając jego rozmiary i pozycję.
- 6.Na podstawie Render Tree i układu (layout) przeglądarka rozpoczyna renderowanie zawartości na ekranie użytkownika. Proces ten obejmuje rysowanie pikseli dla każdego wyświetlanego elementu.
- 7.Przeglądarka łączy wyrenderowane warstwy (layers) i tworzy ostateczny obraz, który użytkownik widzi na ekranie
+\*\*\*CSSOM to zestaw API, które pozwalają na modyfikowanie CSS za pomocą JavaScriptu bez konieczności przeładowywania strony
 
- Optymalizacja CRP odgrywa ważną rolę w tworzeniu szybko ładujących się i responsywnych stron internetowych. Obejmuje to minimalizowanie użycia zasobów, optymalizację CSS i JavaScript, a także stosowanie metod, takich jak leniwe ładowanie zasobów i asynchroniczne ładowanie skryptów, aby przyspieszyć proces renderowania strony
+Critical Rendering Path (CRP) – to proces, który przeglądarka wykonuje, aby przekształcić HTML, CSS i JavaScript w wizualny interfejs na ekranie użytkownika
+1.Przeglądarka otrzymuje kod HTML dokumentu z serwera
+2.Przeglądarka analizuje kod HTML i tworzy strukturę drzewa dokumentu, zwaną DOM (Document Object Model)
+3.Przeglądarka ładuje zewnętrzne pliki CSS, a także osadzone i wbudowane style niezbędne do wyglądu strony. Po załadowaniu plików CSS przeglądarka tworzy CSSOM (CSS Object Model)
+4.Przeglądarka łączy DOM i CSSOM, aby utworzyć Render Tree, który zawiera tylko te węzły DOM, które zostaną wyświetlone na ekranie, oraz odpowiadające im style
+5.Przeglądarka określa rozmieszczenie każdego elementu w Render Tree, uwzględniając jego rozmiary i pozycję.
+6.Na podstawie Render Tree i układu (layout) przeglądarka rozpoczyna renderowanie zawartości na ekranie użytkownika. Proces ten obejmuje rysowanie pikseli dla każdego wyświetlanego elementu.
+7.Przeglądarka łączy wyrenderowane warstwy (layers) i tworzy ostateczny obraz, który użytkownik widzi na ekranie
 
+Optymalizacja CRP odgrywa ważną rolę w tworzeniu szybko ładujących się i responsywnych stron internetowych. Obejmuje to minimalizowanie użycia zasobów, optymalizację CSS i JavaScript, a także stosowanie metod, takich jak leniwe ładowanie zasobów i asynchroniczne ładowanie skryptów, aby przyspieszyć proces renderowania strony
 
-***CORS (Cross-Origin Resource Sharing).
- Mekanizm, który wykorzystuje dodatkowe nagłówki HTTP, aby umożliwić agentowi użytkownika uzyskiwanie zezwoleń na dostęp do wybranych zasobów z serwera na źródle (domenie), innym niż ta, którą obecnie używa strona, nazywa się 
+\*\*\*CORS (Cross-Origin Resource Sharing).
+Mekanizm, który wykorzystuje dodatkowe nagłówki HTTP, aby umożliwić agentowi użytkownika uzyskiwanie zezwoleń na dostęp do wybranych zasobów z serwera na źródle (domenie), innym niż ta, którą obecnie używa strona, nazywa się
 
-
-
-****MVC (Model-View-Controller)
+\*\*\*\*MVC (Model-View-Controller)
 Wzor projektowy, który umożliwia efektywne oddzielenie modelu danych (gdzie wszystko obsługuje serwer), wyświetlania i obsługi akcji (kontroler wykonuje odpowiednie operacje i przekazuje je do widoku)
 
-***Wzorcami projektowymi (Design Patterns)
+\*\*\*Wzorcami projektowymi (Design Patterns)
 To gotowe do użycia rozwiązania często występujących problemów w programowaniu
 
-***"use strict" to dyrektywa w JavaScript, która wprowadza tryb restrykcyjny, zmieniając sposób działania języka w celu uniknięcia pewnych powszechnych błędów i poprawy bezpieczeństwa
+\*\*\*"use strict" to dyrektywa w JavaScript, która wprowadza tryb restrykcyjny, zmieniając sposób działania języka w celu uniknięcia pewnych powszechnych błędów i poprawy bezpieczeństwa
 wprowadza szereg ograniczeń, takich jak:
 Zakaz używania niezadeklarowanych zmiennych.
 Uniemożliwienie przypisania wartości do tylko do odczytu (np. do stałych).
 Zmiana sposobu działania funkcji, w tym rozróżnianie nazw argumentów w przypadku funkcji o tej samej nazwie.
 
-***let
+\*\*\*let
 Służy do deklarowania zmiennych, które mogą być zmieniane (modyfikowane) w późniejszym czasie.
 Ma blokowy zakres (block scope), co oznacza, że jest dostępny tylko w obrębie bloku kodu, w którym został zadeklarowany (np. wewnątrz pętli, funkcji, warunku).
 Nie jest hoistowane jak var, czyli nie można odwołać się do zmiennej przed jej zadeklarowaniem.
 
-***const
+\*\*\*const
 Służy do deklarowania zmiennych, które nie mogą być modyfikowane po ich inicjalizacji (są stałymi).
 Również ma blokowy zakres (block scope).
 Musi być zainicjalizowana w momencie deklaracji
@@ -69,19 +68,18 @@ Musi być zainicjalizowana w momencie deklaracji
 let jest używane do zmiennych, których wartość może się zmieniać.
 const jest używane do zmiennych, których wartość nie powinna być zmieniana po przypisaniu.
 
-***Zmienne zadeklarowane za pomocą var mogą być aktualizowane i deklarowane ponownie
+\*\*\*Zmienne zadeklarowane za pomocą var mogą być aktualizowane i deklarowane ponownie
 
-***Scope (zakres zmiennych)
+\*\*\*Scope (zakres zmiennych)
 Zakres zmiennych to część programu, w której możemy odwołać się do zmiennej, funkcji lub obiektu.
 Zakresy pomagają ukrywać zmienne przed niepożądanym dostępem i dzielić kod na logiczne bloki
 
-***Różnice między funkcją strzałkową a zwykłą funkcją
+\*\*\*Różnice między funkcją strzałkową a zwykłą funkcją
 Nie można używać jako konstruktora
 Lekkie deklarowanie
 Składnia
 
-
-***W czym jest roznica pomiedzy Сookie, Local Storage и Session Storage
+\*\*\*W czym jest roznica pomiedzy Сookie, Local Storage и Session Storage
 
 Cookies:
 Przechowują małe ilości danych (zwykle do 4 KB na domenę). Najczęściej używane do wymiany danych z serwerem
@@ -92,21 +90,20 @@ Pozwala przechowywać większe ilości danych (zwykle od 5 do 10 MB na domenę).
 Session Storage:
 Również przeznaczony do przechowywania małych ilości danych, podobnie jak Cookies, ale dane sesji są usuwane po zamknięciu karty lub przeglądarki.
 
-
-***KISS (Keep It Simple, Stupid) – „Rób to prosto, głupcze”
+\*\*\*KISS (Keep It Simple, Stupid) – „Rób to prosto, głupcze”
 Zasada sugeruje, aby kod był jak najprostszy i łatwy do zrozumienia.
 
-***DRY (Don't Repeat Yourself) – „Nie powtarzaj się”
+\*\*\*DRY (Don't Repeat Yourself) – „Nie powtarzaj się”
 Każdy fragment kodu powinien mieć jedno, unikalne miejsce.
 
-***Promise & Async await
+\*\*\*Promise & Async await
 Promise Promise to obiekt w JavaScript, który reprezentuje wartość,
 która będzie dostępna w przyszłości (np. po zakończeniu operacji asynchronicznej, takiej jak pobieranie danych z serwera).
 
-***Async/Await
+\*\*\*Async/Await
 Async/Await to nowocześniejszy i czytelniejszy sposób obsługi Promisów, który pozwala pisać kod asynchroniczny w stylu synchronicznym.
 
-***e.preventDefault() + e.stopPropagation()
+\*\*\*e.preventDefault() + e.stopPropagation()
 Są używane do kontrolowania zachowania zdarzeń w przeglądarce.
 
 e.preventDefault() – zatrzymuje domyślne działanie przeglądarki
@@ -115,17 +112,15 @@ Przykład: zapobiega przeładowaniu strony po wysłaniu formularza
 e.stopPropagation() – zatrzymuje propagację zdarzenia w górę drzewa DOM
 Przykład: kliknięcie w przycisk nie uruchomi zdarzenia w elemencie nadrzędnym
 
-***Event Loop
+\*\*\*Event Loop
 Event Loop to mechanizm, który pozwala asynchronicznemu kodowi działać w JavaScript bez blokowania głównego wątku.
- Dzięki niemu JavaScript (który jest jednoprotokółowy) może wykonywać operacje asynchroniczne, nie zatrzymując głównego wątku aplikacji
+Dzięki niemu JavaScript (który jest jednoprotokółowy) może wykonywać operacje asynchroniczne, nie zatrzymując głównego wątku aplikacji
 
 Jednoprotokółowość - JavaScript wykonuje jeden kawałek kodu na raz (wątek główny).
 Event Loop zarządza kolejką zadań, która zawiera makro i mikrotaski.
 
 Mikrotaski (np. Promise) mają wyższy priorytet. Są wykonywane po każdym synchronizowanym zadaniu, ale przed makrotaskami.
 Makrotaski to głównie zdarzenia, takie jak setTimeout(), setInterval() itp
-
-
 
 ```jsx
 console.log('Start');
@@ -255,7 +250,7 @@ Podczas wywoływania metod na wartościach prymitywnych, JavaScript automatyczni
 
 ***Null & undefined
   undefined to wartość, która oznacza, że zmienna została zadeklarowana, ale nie została jej przypisana żadna wartość.
-null to specjalna wartość, którą przypisujemy zmiennej, aby wyraźnie wskazać, że nie ma ona żadnej wartości 
+null to specjalna wartość, którą przypisujemy zmiennej, aby wyraźnie wskazać, że nie ma ona żadnej wartości
 
 
 ***Memoization(Memyzacja)
@@ -272,7 +267,7 @@ Callback hell wiele wywołań zwrotnych (callbacków) zagnieżdżonych wewnątrz
 
 
 ***Hoisting
- to przenoszenie zadeklarowanej funkcji na górę jej zakresu widoczności. 
+ to przenoszenie zadeklarowanej funkcji na górę jej zakresu widoczności.
  Działa tylko dla function declaration, ale nie ma zastosowania do function expression, bez przeładowywania strony podczas interakcji z użytkownikiem.
 
  ***Closure(Zamknięcie)
@@ -330,12 +325,12 @@ interakcje z bazą danych,
 
 
 
-***Callback function (funkcja zwrotna) 
+***Callback function (funkcja zwrotna)
 Callback function (funkcja zwrotna) to funkcja przekazywana jako argument do innej funkcji, która zostanie wywołana później, zazwyczaj po zakończeniu jakiejś operacji.
 
 
 
-***Cookies 
+***Cookies
 HTTP cookie (web cookie, cookie przeglądarki) – to mały fragment danych wysyłany przez serwer do przeglądarki użytkownika,
 który przeglądarka może zapisać i odesłać z kolejnym żądaniem do tego samego serwera. Pozwala to między innymi sprawdzić,
 czy oba żądania pochodzą z tej samej przeglądarki (na przykład w celu uwierzytelnienia użytkownika).
@@ -347,16 +342,16 @@ Personalizacji (preferencje użytkownika)
 Monitorowania (śledzenia zachowania użytkownika)
 
 
-***Shadow DOM 
+***Shadow DOM
 Shadow DOM to technologia w przeglądarkach, która pozwala tworzyć enkapsulowane elementy DOM z własnymi stylami i logiką,
 które nie wpływają na zewnętrzny dokument i są od niego niezależne.
 
-***DOM 
+***DOM
 To reprezentacja dokumentu HTML w postaci drzewa znaczników,
 umożliwiająca interakcję za pomocą JavaScript (dodawanie/usuwanie elementów z drzewa, zmiana stylów elementów i wiele więcej).
 
 
-***OPP 
+***OPP
 OOP to sposób pisania kodu, który pozwala tworzyć obiekty na podstawie jednego obiektu.
 
 Abstrakcja – tworzenie klasy bazowej z minimalnym zestawem wspólnych metod przeznaczonych do dziedziczenia.
@@ -373,7 +368,7 @@ L – Zasada podstawienia Liskov (The Liskov Substitution Principle) – klasa d
 I – Zasada segregacji interfejsów (The Interface Segregation Principle) – wiele dedykowanych interfejsów jest lepsze niż jeden ogólny interfejs.
 D – Zasada odwrócenia zależności (The Dependency Inversion Principle) – moduły wyższego poziomu nie powinny zależeć od modułów niższego poziomu. Oba powinny zależeć od abstrakcji.
 
-Poprawny kod 
+Poprawny kod
 // Klasa do wysyłania e-maili
 class EmailService {
   sendEmail(to, subject, body) {
@@ -426,7 +421,7 @@ userService.registerUser("John", "john@example.com");
 
 
 
-***WebSocket 
+***WebSocket
 Zapewnia możliwość wymiany danych między przeglądarką a serwerem za pomocą stałego połączenia.
 Dane są przesyłane w obu kierunkach w postaci "pakietów", bez przerywania połączenia i dodatkowych żądań HTTP.
 
@@ -455,7 +450,7 @@ Metoda bind() tworzy nową funkcję, która przy wywołaniu ustawia jako konteks
 Metoda apply() wywołuje funkcję z określonym kontekstem this i parametrami przekazanymi w formie tablicy (lub obiektu przypominającego tablicę).
 
 
-Przyklady 
+Przyklady
 
 apply()
 func.apply(thisArg, [argsArray])
@@ -467,7 +462,7 @@ Metoda call() wywołuje funkcję z określonym kontekstem this i argumentami prz
 
 
 
-React Install 
+React Install
 1. Jeseli jest stara wersja npm install react-scripts@latest
 2. npm create vite@latest countries-task
 3. Wchodzimy do pliku cd nazwa-repo
@@ -481,7 +476,7 @@ o taki sposob mozna dolaczyc jakoms wartosc za pomoca `join` {topCurrencies.join
  word-break: break-word jest przydatna np. "West African CFA franc" zawinie się w dwóch linijkach, a nie wyjdzie poza ekran. (pozwala zawiac dlugie teksty)
 
 
-Context 
+Context
 
 1. Tworzy sie typ w kompononecie "Global.tsx" (zawsze powinnie byc "export const") np export const GlobalTypes
 2. I tworzymy nasz plik hook nazwa powinna zawierac "use" np. "useGlobalContext.tsx"
@@ -513,7 +508,7 @@ return (
 
 To wbudowany obiekt w JavaScript, który pozwala stworzyć "otoczkę" (obiekt pośredniczący) wokół innego obiektu lub tablicy, aby przechwytywać i modyfikować jego zachowanie. Posiada tzw. przechwytywacze (ang. handlers) takie jak get i set, które można skonfigurować do przechwytywania operacji takich jak odczyt lub zapis właściwości, wywołanie funkcji, iteracja
 
-Przyklad proxy: 
+Przyklad proxy:
 const osoba = {
   imie: "Ala",
   wiek: 25
@@ -606,7 +601,7 @@ To dwa sposoby łączenia gałęzi w jedną.
 `git merge` łączy zmiany, tworząc nowy commit scalający (merge commit), zachowując przy tym pełną historię obu gałęzi.
 Historia zostaje rozgałęziona, ale nic nie jest tracone. Zachowuje strukturę drzewa commitów (historię rozwidleń)
 
-`git rebase` przepisuje historię commitów – przenosi lokalne commity na szczyt zaktualizowanej głównej gałęzi. 
+`git rebase` przepisuje historię commitów – przenosi lokalne commity na szczyt zaktualizowanej głównej gałęzi.
 Tworzy prostą linię historii, jakby gałąź była tworzona na świeżo od głównej
 
 
@@ -686,3 +681,123 @@ Typ Query służy do odczytu danych z API.
 Typ Mutation służy do zapisu lub zmiany danych.
 
 Błędy w GraphQL są obsługiwane za pomocą specjalnego typu danych Error i zwracane w polu errors w odpowiedzi.
+
+
+
+##Design patterns
+
+1. Wzorce kreacyjne (Pochodzące od "tworzyć"):
+
+  Metoda wytwórcza (Factory Method): umożliwia tworzenie obiektów bez konieczności określania ich konkretnych klas.
+
+  Abstrakcyjna fabryka (Abstract Factory): zapewnia interfejs do tworzenia rodzin powiązanych lub współzależnych obiektów bez wskazywania ich konkretnych klas.
+
+  Budowniczy (Builder): służy do konstruowania złożonych obiektów poprzez wykonywanie prostych kroków konstrukcyjnych.
+
+2. Wzorce strukturalne:
+
+  Adapter (Adapter): pozwala, aby interfejs jednej klasy był kompatybilny z interfejsem innej klasy.
+
+  Dekorator (Decorator): umożliwia dodawanie nowych funkcji do obiektów bez zmieniania ich struktury.
+
+  Pełnomocnik (Proxy): zapewnia zastępstwo lub reprezentanta innego obiektu w celu kontrolowania dostępu do niego.
+
+3. Wzorce behawioralne (Zachowań):
+
+  Obserwator (Observer): definiuje zależność typu „jeden do wielu” pomiędzy obiektami w taki sposób, że zmiana stanu jednego obiektu powoduje automatyczne powiadomienie i aktualizację wszystkich zależnych od niego obiektów.
+
+  Strategia (Strategy): definiuje rodzinę algorytmów, enkapsuluje każdy z nich i umożliwia ich wzajemną wymienność.
+
+  Polecenie (Command): enkapsuluje żądanie jako obiekt, umożliwiając konfigurowanie klientów do przetwarzania żądań, kolejkowanie żądań lub prowadzenie dziennika zmian.
+
+
+
+##Sass
+
+Główne funkcje: zmienne, zagnieżdżone style, zagnieżdżone selektory, import plików, funkcje i pętle.
+
+Miksiny – to fragment kodu, który można wielokrotnie wykorzystywać w różnych miejscach za pomocą @include.
+
+
+Na przyklad:
+sass
+    @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      border-radius: $radius;
+    }
+
+    .button {
+      @include border-radius(5px);
+    }
+
+##Mikroserwisy
+
+Mikroserwisy to podejście do tworzenia aplikacji jako zestawu niezależnie wdrażanych usług, które nie są od siebie zależne. Aplikacja jest budowana jako kombinacja mikroserwisów, z których każdy odpowiada za określoną funkcjonalność w swojej domenie (obszarze tematycznym). Mikroserwisy komunikują się ze sobą za pomocą interfejsów API, takich jak REST.
+
+
+ ## 1.Kiedy API z danymi można nazwać mikroserwisem:
+Jeśli to API:
+
+jest niezależne od reszty systemu (może działać osobno),
+
+odpowiada za jedną konkretną funkcjonalność lub domenę (np. „zarządzanie użytkownikami”, „produkty”, „płatności”),
+
+można je wdrożyć i rozwijać niezależnie (np. osobny zespół, osobna baza danych, niezależny deployment),
+
+
+ ## 2.Kiedy API z danymi nie jest mikroserwisem:
+Jeśli to tylko część monolitycznej aplikacji (np. endpointy /users, /orders, ale wszystko działa na jednym serwerze i jednej bazie danych),
+
+Jeśli nie można go uruchomić i rozwijać niezależnie,
+
+Jeśli nie ma jasnego podziału domenowego (np. jeden ogromny kontroler robi „wszystko”),
+
+to wtedy to zwykłe API, a nie mikroserwis.
+
+
+
+##Przyklady mikroserwisów:
+
+1. User Service (Serwis użytkowników)
+Rejestracja, logowanie, profil użytkownika, zmiana hasła
+
+2. Product Service (Serwis produktów)
+Lista produktów, szczegóły, kategorie, dostępność
+
+3. Order Service (Serwis zamówień)
+Tworzenie zamówień, statusy, historia zakupów
+
+4. Payment Service (Serwis płatności)
+Integracja z PayPal/Stripe, weryfikacja płatności
+
+5. Shipping Service (Serwis dostawy)
+Informacje o przesyłce, generowanie etykiet, śledzenie
+
+
+
+##Webpack
+Module Federation — to wtyczka do Webpacka, która umożliwia dzielenie kodu między niezależnymi aplikacjami
+ i dynamiczne ładowanie tego kodu w przeglądarce użytkownika.
+
+Dynamiczne ładowanie modułów – kod jest pobierany tylko wtedy, gdy jest potrzebny.
+Rozwój aplikacji webowej w architekturze mikrofrontendów (mikroserwisowej) – każdy moduł może być tworzony i wdrażany niezależnie.
+
+
+Podział aplikacji na oddzielne moduły:
+
+Można podzielić aplikację na mniejsze, niezależne części – na przykład:
+  # moduł główny (np. layout, routing),
+
+  # moduł uwierzytelniania (logowanie, rejestracja),
+
+  # moduł danych (np. dashboard, API).
+
+Każdy z tych modułów:
+  # może być rozwijany przez osobny zespół,
+
+  # ma własny cykl życia i wdrożenie,
+
+  # może być ładowany tylko wtedy, gdy użytkownik go potrzebuje.
+
+```
