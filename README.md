@@ -464,10 +464,12 @@ Metoda call() wywołuje funkcję z określonym kontekstem this i argumentami prz
 
 React Install
 1. Jeseli jest stara wersja npm install react-scripts@latest
-2. npm create vite@latest countries-task
-3. Wchodzimy do pliku cd nazwa-repo
-4.npm install
-5. Zeby uruchomic aplikacje npm run dev
+2.Wybieramy framework
+3. Wybrac variant 
+4. npm create vite@latest countries-task
+5. Wchodzimy do pliku cd nazwa-repo
+6.npm install
+7. Zeby uruchomic aplikacje npm run dev
 
 o taki sposob mozna dolaczyc jakoms wartosc za pomoca `join` {topCurrencies.join(", ")}
 
