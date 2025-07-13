@@ -802,4 +802,42 @@ Każdy z tych modułów:
 
   # może być ładowany tylko wtedy, gdy użytkownik go potrzebuje.
 
-```
+
+
+
+##Uruchomenie swojego wlasnego servera 
+
+app.listen(3000, () => {
+    console.log("API dziala na http://localhost:3000");
+})
+
+##Przyklad servera (server.js)
+
+const express = require('express');
+const fs = require('fs');
+const app = express();
+
+app.use(express.json()); // żeby obsłużyć JSON w POST
+
+const DATA_FILE = './data.json';
+
+// POST /api/coasters
+app.post('/api/coasters', (req, res) => {
+    const nowaKolejka = req.body;
+
+    // Walidacja (podstawowa)
+    if (!nowaKolejka.liczba_personelu || !nowaKolejka.liczba_klientow || !nowaKolejka.dl_trasy || !nowaKolejka.godziny_od || !nowaKolejka.godziny_do) {
+        return res.status(400).json({ error: 'Brakuje wymaganych danych.' });
+    }
+
+    // Wczytaj aktualne dane
+    const dane = JSON.parse(fs.readFileSync(DATA_FILE));
+
+    // Dodaj nową kolejkę
+    dane.push(nowaKolejka);
+
+    // Zapisz zaktualizowane dane
+    fs.writeFileSync(DATA_FILE, JSON.stringify(dane, null, 2));
+
+    res.status(201).json({ message: 'Kolejka została dodana.', nowaKolejka });
+});
