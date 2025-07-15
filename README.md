@@ -811,7 +811,7 @@ app.listen(3000, () => {
     console.log("API dziala na http://localhost:3000");
 })
 
-##Przyklad servera (server.js)
+##Przyklad servera i tworzenia API (server.js)
 
 const express = require('express');
 const fs = require('fs');
@@ -841,3 +841,12 @@ app.post('/api/coasters', (req, res) => {
 
     res.status(201).json({ message: 'Kolejka została dodana.', nowaKolejka });
 });
+
+app.listen(3000, () => {
+    console.log("API działa na http://localhost:3000");  - uruchami server na porcie 3000, conole.log do terminala (dla programisty)
+});
+
+
+## res.json(...) – TO WYSYŁA DANE DO KLIENTA (czyli np. do Postmana, przeglądarki, frontendu)
+
+## console.log(...) – TO WYSYŁA DANE DO TERMINALA (czyli dla programisty), sluzy dla debugowania 
