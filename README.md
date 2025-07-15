@@ -850,3 +850,13 @@ app.listen(3000, () => {
 ## res.json(...) – TO WYSYŁA DANE DO KLIENTA (czyli np. do Postmana, przeglądarki, frontendu)
 
 ## console.log(...) – TO WYSYŁA DANE DO TERMINALA (czyli dla programisty), sluzy dla debugowania 
+
+
+## Aktualizacja dannych 
+
+if (liczba_klientow !== undefined) kolejka.liczba_klientow = liczba_klientow;
+    if(liczba_personelu !== undefined) kolejka.liczba_personelu = liczba_personelu;
+    if(godziny_do !== undefined) kolejka.godziny_do = godziny_do;
+    if(godziny_od !== undefined) kolejka.godziny_od = godziny_od;
+
+if (... !== undefined), żeby nie nadpisać pola przypadkowo pustą wartością
