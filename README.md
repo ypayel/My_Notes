@@ -860,3 +860,8 @@ if (liczba_klientow !== undefined) kolejka.liczba_klientow = liczba_klientow;
     if(godziny_od !== undefined) kolejka.godziny_od = godziny_od;
 
 if (... !== undefined), żeby nie nadpisać pola przypadkowo pustą wartością
+
+
+##Uruchomic server w TS
+            nazwa servera
+npx ts-node dev-server.ts
