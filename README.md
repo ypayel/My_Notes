@@ -865,3 +865,7 @@ if (... !== undefined), żeby nie nadpisać pola przypadkowo pustą wartością
 ##Uruchomic server w TS
             nazwa servera
 npx ts-node dev-server.ts
+
+
+## Placeholder nie dziala w input 
+Powodem byc moze: Input wypełniony spacją (" " zamiast "") — wtedy placeholder nie pokaże się
