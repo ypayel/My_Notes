@@ -869,3 +869,61 @@ npx ts-node dev-server.ts
 
 ## Placeholder nie dziala w input 
 Powodem byc moze: Input wypełniony spacją (" " zamiast "") — wtedy placeholder nie pokaże się
+
+
+
+##Jak wkleic zdjecie 
+
+                                    `Sciezka do zdjecia`
+<img src={process.env.PUBLIC_URL + "/images/MvpPage.png"} />
+
+
+
+##Protokoły warstw aplikacji TCP/IP
+
+HTTP - Hypertext Transfer Protocol 
+
+HTTPS Hypertext Transfer Protocol Secure 
+
+HTML - Hypertext Markup Language 
+
+SSH(Secure Shiel) 
+
+DMZ - De-Militarized Zone
+
+MAP (Manufacturing Automation Protoco)
+
+SMTP (Simply Mail Transfer Protocol) - określa podstawowe zasady dostarczania wiadomości na serwer pocztowy, skąd można pobrać ich zawartość za pomocą poczty e-mail. 
+
+IMAP (Internet Message Access Protocol)
+
+TFTP (Trivial File Transfer Protocol)
+
+FTP (File Transfer Protocol) 
+
+POP (Post Office Protocol) - pobieranie 
+wiadomości z servera pocztowego 
+
+ DNS ( Domain Name Server) 
+
+LAN (Local Area Network) - sieć lokalna 
+
+WAN ( Wide Area Network) - Sieć globalna 
+
+Sieci peer to peer 
+Server plików - drukarka - router - drukarka 
+
+Sieci klient server 
+Server - klient 
+
+Wiadomość podróżuje po sieci  
+Aplikacji - Transportu - Internet - Dostęp do Sieci
+
+
+Haker - white hat. Dobry specjalista, znający doskonale systemy komputerowe 
+
+Cracker - black hat. Włamywacz mający na celu pokonanie zabiezpieczyn systemu 
+
+Virusy - trojany, robak, mail ware, koń trojański, back door
+
+128 bitów wystarczające do zabiezpieczenia
