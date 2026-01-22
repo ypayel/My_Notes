@@ -920,10 +920,24 @@ Wiadomość podróżuje po sieci
 Aplikacji - Transportu - Internet - Dostęp do Sieci
 
 
-Haker - white hat. Dobry specjalista, znający doskonale systemy komputerowe 
-
-Cracker - black hat. Włamywacz mający na celu pokonanie zabiezpieczyn systemu 
-
+Haker - white hat. Dobry specjalista, znający doskonale systemy komputerowe
+Cracker - black hat. Włamywacz mający na celu pokonanie zabiezpieczyn systemu
 Virusy - trojany, robak, mail ware, koń trojański, back door
-
 128 bitów wystarczające do zabiezpieczenia
+
+
+### WebHacking
+
+Portswigger - https://portswigger.net/web-security (strona dla praktyk attakow i znalezienia slabych miejsc XSS, CSRF, SSRF, IDOR
+DVWA - https://www.vulnhub.com/entry/damn-vu...
+OWASP JuiceShop - https://owasp.org/www-project-juice-s...
+bWAPPhttp://www.itsecgames.com/
+
+
+##Platformy do praktykowania wiedzy teoretycznej
+
+HackTheBox
+TryHackMe
+CTFtime
+RootMe
+
