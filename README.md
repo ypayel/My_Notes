@@ -941,3 +941,52 @@ TryHackMe
 CTFtime
 RootMe
 
+
+
+###Danne kurs Azure
+##Dane ustrukturyzowane - to dane zgodne z okreslonym schematem, co oznacza, ze wszystkie elementy danych maja te same pola i wlasciwosci
+
+##Dane polustrukturyzowane - reprezentuja informacje, ktore maja pewna strukture, ale dopuszcaja pewne zroznicowaniemiedzy inicjami encji (np. wiekszosc klientow moze miec jednego maila, niektorzy moga miec wiele, a ktos w moze niem miec w cale
+
+##Dane niestrukturyzoiwane - nie wszystkie dane sa ustrukturyzowane, a nawet czesciowo ustrukturyzowane (np. dokumenty, obrazy, dane audio i wideo, pliki binarne moga nie miec zdefiniowanej struktury)
+
+##Dane wiektorowe - typ dannych, ktory pozwala asystentom AI odpowiadac na pytania dotyczace ich wlasnych dokumentow i danych
+
+##Magazyn dannych
+Organizaje zazwyczaj przechowuja dane w formatach ustukturyzowanych, polustrukturyzowanych lub nieustrukryzowanych, aby rejestrowac szczegoly dotyczance podmiotow(np. klientow i produktow), kontkretnych zzdarzen (np. transakcji sprzedazy) lub innych informacji w dokumentach.
+Sa dwie glowne kategorie magazynow dannych:
+- Przechowanie plikow
+- Bazy danych
+
+
+##Pliki tekstowe rozdzielone
+Najpopuilarniejszym formatem danych rozdielonych sa wartosci rozdielone przecinkami (CSV), w ktorych pola sa rozdielone przecinkami, a wiersze zakonczone nowej linii.
+
+Notacja obiekjtow JavaScript (JSON)
+
+Rozszerzalny jezyk znacznikow (XML) - XML to czytelny dla czlowieka format danych, popularny w latach 90-2000. XML uzywa znacznikow ujetych w nawiasy katowe ( < /> ) do defenioania elementow i atrybutow
+                        XML:
+<Customers>
+  <Customer name="Joe" lastName="Jones">
+    <ContactDetails>
+      <Contact type="home" number="555 123-1234"/>
+      <Contact type="email" address="joe@litware.com"/>
+    </ContactDetails>
+  </Customer>
+  <Customer name="Samir" lastName="Nadoy">
+    <ContactDetails>
+      <Contact type="email" address="samir@northwind.com"/>
+    </ContactDetails>
+  </Customer>
+</Customers>
+
+Duzy obiekt binarny(BLOB)
+Ostatecznie wszystkie pliki sa przechowywane jako dane binarne, ale w formatach czytelnych dla czlowieka, omowionych powyzej, bajty danych binarnych sa mapowane na znaki drukowalne ( za pomoca schomatu kodowania znakow: ASCII lub UniCode). Typowe typy danych przechowywanych w plikach binarnych to obrazy, wideo, audio i dokumenty specyficzne dla aplikacji. Czesto nazywaja pliki danych duzymi obiektami binarnymi (BLOB)
+
+
+## Zoptymalizowane formaty plików
+Parquet - to kolumnowy format danych i de facto stardat doa nowoczesnych systemow typu data lakehouse. Jest to projekt Apache. Plik Parquet zawiera grupy wierszy. Dane dla kazdej kolumny sa przechowywane razem w jednej grupie rekordow. Kazda grupa wierszy zawiera jeden lub wiecej fragmentow danych.
+
+Avro to format oparty na ciagach znakow stworzony przez apache. Kazdy plik zawiera naglowek opisujacy strukture danych pliku. Naglowek ten jest przechowywany w formacie JSON. Dane sa przechowywane jako dane binarne w jednym lub kilku blokach rekordow.  Avro to odpowiedni format do kompresji danych i minimalizacji wymagań dotyczących pamięci masowej i przepustowości sieci
+
+Delta Lake - to format przechowywania danych o otwartym kodzie zrodlowym bazujacy na Parquet i rozszerzony o dziennik transakcji.Zapewnia on obsluge transakcji ACID, wersjonowanie danych i niezawodne aktualizacje plikow przechowywania w jeziore danych.
