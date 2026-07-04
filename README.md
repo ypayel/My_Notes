@@ -1004,7 +1004,6 @@ Microsoft Fabric, Azure Databricks, Microsoft Purview
 Microsoft Fabric - to ujednolicona platforma analityki jako uslugi (SaaS), ktora laczy funkcje magazynowania danych, inzynierii danych, przechowywania danych i raportowania w jedynym obszarze roboczym.
 Azure Databricks to platforma analityki w chmurze stworzona z mysla o inzynierii i przetwarzaniu danych na duza skale, wykorzystuje platforme Delta Lake - Parquet - oraz dziennik transakcji, ktory umozliwia wesjonowanie i transakcje
 Microsoft Purview zapewnia ujednolicone bezpieczenstwo danych, zarzadzanie nimi i zgodnosc z przepisami, pomogajac w wszyszukiwaniu, ochronie i zarzadzaniu danymi
-<img width="935" height="525" alt="image" src="https://github.com/user-attachments/assets/a8cf4228-7fba-40fe-ba3f-803a0592331e" />
 
 
 ##Organizowanie danych za pomocą architektury Medallion
