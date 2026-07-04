@@ -985,8 +985,31 @@ Ostatecznie wszystkie pliki sa przechowywane jako dane binarne, ale w formatach 
 
 
 ## Zoptymalizowane formaty plików
-Parquet - to kolumnowy format danych i de facto stardat doa nowoczesnych systemow typu data lakehouse. Jest to projekt Apache. Plik Parquet zawiera grupy wierszy. Dane dla kazdej kolumny sa przechowywane razem w jednej grupie rekordow. Kazda grupa wierszy zawiera jeden lub wiecej fragmentow danych.
+Parquet - to kolumnowy format danych i de facto stardat dla nowoczesnych systemow typu data lakehouse. Jest to projekt Apache. Plik Parquet zawiera grupy wierszy. Dane dla kazdej kolumny sa przechowywane razem w jednej grupie rekordow. Kazda grupa wierszy zawiera jeden lub wiecej fragmentow danych.
 
 Avro to format oparty na ciagach znakow stworzony przez apache. Kazdy plik zawiera naglowek opisujacy strukture danych pliku. Naglowek ten jest przechowywany w formacie JSON. Dane sa przechowywane jako dane binarne w jednym lub kilku blokach rekordow.  Avro to odpowiedni format do kompresji danych i minimalizacji wymagań dotyczących pamięci masowej i przepustowości sieci
 
 Delta Lake - to format przechowywania danych o otwartym kodzie zrodlowym bazujacy na Parquet i rozszerzony o dziennik transakcji.Zapewnia on obsluge transakcji ACID, wersjonowanie danych i niezawodne aktualizacje plikow przechowywania w jeziore danych.
+
+
+### Szczegóły systemu przetwarzania analiz
+1.Dame operacyjne sa wyodrebniane, przeksztalcane i ladowane (ETL) do jeziora danych w celu analizy - najpierw sa wyodrebniane i ladowane, a nastepnie przeksztalcane. Jest szeroko stosowane w nowoczesnych architekturach typu lakehouse
+2.Dane sa ladowane do schematu z tabel - zazwyczaj z magazynu danych z abstrakcjami tabel w plikach w jeziorze danych lub magazynu danych w pelni relacyjnym silnikiem SQL
+3.Dane w magazynie danych mozna agregowac i wczytywac do modelu przetwarzania analitycznego online - obecnie czesciej nazywanego modelem semantycznym( a historycznie kostka).Zagregowanie wartosci liczbowe z tabel faktow sa obliczane w celu przeciecia wymiarow z tabel wymiarow. Na przyklad przychody ze sprzedazy. Modele semantyczne(PowerBi)
+4.Dane w jeziorze danych, magazynie danych i modelu analitycznym można przeszukiwać w celu tworzenia raportów, wizualizacji i pulpitów nawigacyjnych.
+
+##Nowoczesne platformy analityczne
+Microsoft Fabric, Azure Databricks, Microsoft Purview
+
+Microsoft Fabric - to ujednolicona platforma analityki jako uslugi (SaaS), ktora laczy funkcje magazynowania danych, inzynierii danych, przechowywania danych i raportowania w jedynym obszarze roboczym.
+Azure Databricks to platforma analityki w chmurze stworzona z mysla o inzynierii i przetwarzaniu danych na duza skale, wykorzystuje platforme Delta Lake - Parquet - oraz dziennik transakcji, ktory umozliwia wesjonowanie i transakcje
+Microsoft Purview zapewnia ujednolicone bezpieczenstwo danych, zarzadzanie nimi i zgodnosc z przepisami, pomogajac w wszyszukiwaniu, ochronie i zarzadzaniu danymi
+<img width="935" height="525" alt="image" src="https://github.com/user-attachments/assets/a8cf4228-7fba-40fe-ba3f-803a0592331e" />
+
+
+##Organizowanie danych za pomocą architektury Medallion
+Sa trzy warstwy:
+Braz: Surowe dany uzywane w stanie takim, w jakim sa z systemow zrodlowych, bez przeksztalcen, z zachowaniem oryginalnych w celu ponownego przetworzenia
+Srebro: Pczyszczone i wyrownane dane, usuniente dublikaty i ujednolicone typy danych
+Zloto: Zagregowane, gotowe do wykorzystania w biznesie dane modelowanie na potrzeby konkretnych przypadkow raportowania i analiz
+
