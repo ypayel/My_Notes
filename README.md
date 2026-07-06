@@ -122,7 +122,7 @@ Event Loop zarządza kolejką zadań, która zawiera makro i mikrotaski.
 Mikrotaski (np. Promise) mają wyższy priorytet. Są wykonywane po każdym synchronizowanym zadaniu, ale przed makrotaskami.
 Makrotaski to głównie zdarzenia, takie jak setTimeout(), setInterval() itp
 
-
+```jsx
 console.log('Start');
 
 fetch('https://api.example.com/data')
@@ -135,14 +135,18 @@ fetch('https://api.example.com/data')
   });
 
 console.log('End');
-
+```
 
 1.fetch inicjuje asynchroniczny żądanie do serwera.
-2.Gdy żądanie jest zakończone, Callback #1 (funkcja przekazana do .then()) trafia do Callback Queue (kolejki zadań)
-3.Event Loop obserwuje Call Stack. Kiedy stos wywołań (Call Stack) jest pusty (po wykonaniu np. console.log('End')),
+2.Gdy żądanie jest zakończone, Callback #1 (funkcja przekazana do .then()) trafia do Callback Queue
+ (kolejki zadań)
+3.Event Loop obserwuje Call Stack. Kiedy stos wywołań (Call Stack) jest pusty
+ (po wykonaniu np. console.log('End')),
  Event Loop pobiera Callback #1 z kolejki i umieszcza go w stosie wywołań do wykonania
-4.Callback #1 jest wykonywany. Jeśli zwróci nowy Promise, to Callback #2 (funkcja w kolejnym .then()) trafi do Callback Queue
-5.Gdy stos wywołań znowu jest pusty, Event Loop przenosi Callback #2 z Callback Queue do stosu wywołań, aby go wykonać
+4.Callback #1 jest wykonywany. Jeśli zwróci nowy Promise, to Callback
+ #2 (funkcja w kolejnym .then()) trafi do Callback Queue
+5.Gdy stos wywołań znowu jest pusty, Event Loop przenosi Callback
+ #2 z Callback Queue do stosu wywołań, aby go wykonać
 6.Wewnątrz Callback #2 dane z serwera są już dostępne (np. w zmiennej data) i mogą zostać przetworzone.
 
 ***Map & forEach
@@ -176,7 +180,7 @@ Atrybut async jest używany w tagu <script> w HTML, aby umożliwić asynchronicz
     2.Przypisanie prototypu: Prototyp nowego obiektu zostaje ustawiony na prototype funkcji konstruktora.
     3.Wykonanie funkcji konstruktora: Funkcja konstruktora jest wywoływana z przypisaniem this do nowego obiektu.
     4.Zwracanie obiektu: Jeśli funkcja konstruktora nie zwróci jawnie obiektu, new zwróci nowo utworzony obiekt.
-
+```jsx
     function Person(name, age) {
   this.name = name;
   this.age = age;
@@ -187,6 +191,7 @@ const person2 = new Person('Bob', 30);
 
 console.log(person1.name);  // "Alice"
 console.log(person2.age);   // 30
+```
 
 ***this
 
@@ -194,6 +199,7 @@ this — to odniesienie do obiektu, w kontekście którego jest wywoływane. War
 Wartość this wewnątrz funkcji może się zmieniać w zależności od tego, jak funkcja została wywołana. this jest dynamiczne, a jego wartość zależy od kontekstu wywołania funkcji.
 
 1.W metodzie obiektu: Jeśli funkcja jest wywoływana jako metoda obiektu, this odnosi się do tego obiektu.
+```jsx
 const person = {
   name: 'Alice',
   greet: function() {
@@ -202,16 +208,19 @@ const person = {
 };
 
 person.greet(); // "Alice"
+```
 
 2.W funkcji konstruktora: Kiedy funkcja jest używana jako konstruktor (z operatoriem new), this odnosi się do nowo utworzonego obiektu.
+```jsx
 function Person(name) {
   this.name = name;
 }
 
 const person = new Person('Alice');
 console.log(person.name); // "Alice", ponieważ this odnosi się do nowego obiektu
-
+```
 3.W funkcji strzałkowej: Funkcje strzałkowe nie mają własnego this. Zamiast tego this w funkcji strzałkowej jest dziedziczone z kontekstu, w którym została utworzona.
+```
 const person = {
   name: 'Alice',
   greet: function() {
@@ -223,14 +232,17 @@ const person = {
 };
 
 person.greet(); // "Alice"
-
+```
 Zmiana wartości this za pomocą call, apply i bind: Można jawnie ustawić wartość this za pomocą metod call, apply i bind.
+
+```
 function greet() {
   console.log(this.name);
 }
 
 const person = { name: 'Alice' };
 greet.call(person); // "Alice", ponieważ `this` zostało ustawione na obiekt person
+```
 
 ***map & set
 Map to kolekcja par klucz/wartość, gdzie każdy klucz jest unikalny. Map zachowuje kolejność dodawania elementów, podczas gdy obiekt tego nie robi
@@ -289,14 +301,14 @@ Podczas operacji na prymitywnych typach tworzone są nowe wartości, a stare poz
 
 Przykład niezmiennego (immutable) obiektu w JavaScript:
 
-jsx
+```jsx
 
 let x = 5;
 let y = x;  // Tworzona jest kopia wartości x
 x = x + 1;  // Tworzony jest nowy obiekt, a nie zmieniany stary
 console.log(x);  // Wyjście: 6
 console.log(y);  // Wyjście: 5 (wartość y pozostaje niezmieniona)
-
+```
 
 
 ***Zmienne (Mutable) obiekty:
@@ -305,12 +317,12 @@ Zmiany w obiektach są bezpośrednio odzwierciedlane w samym obiekcie, bez tworz
 
 Przykład zmiennego obiektu w JavaScript:
 
-jsx
+```jsx
 
 let arr = [1, 2, 3];
 arr.push(4);  // Zmienia się sama tablica, a nie tworzy nowa
 console.log(arr);  // Wyjście: [1, 2, 3, 4]
-
+```
 
 ***Rekurencja
 Rekurencja to kiedy funkcja wywołuje sama siebie
@@ -369,6 +381,7 @@ I – Zasada segregacji interfejsów (The Interface Segregation Principle) – w
 D – Zasada odwrócenia zależności (The Dependency Inversion Principle) – moduły wyższego poziomu nie powinny zależeć od modułów niższego poziomu. Oba powinny zależeć od abstrakcji.
 
 Poprawny kod
+```
 // Klasa do wysyłania e-maili
 class EmailService {
   sendEmail(to, subject, body) {
@@ -406,7 +419,8 @@ class EmailService {
 class UserService {
   // Konstruktor samodzielnie tworzy zależność od EmailService
   constructor() {
-    this.emailService = new EmailService();  // ❌ Tworzenie zależności wewnątrz klasy
+    this.emailService = new EmailService();  // ❌ Tworzenie zależności
+                                                 wewnątrz klasy
   }
 // Rejestracja użytkownika i wysyłanie e-maila
   registerUser(username, email) {
@@ -417,7 +431,7 @@ class UserService {
 // Tworzymy instancję UserService
 const userService = new UserService();
 userService.registerUser("John", "john@example.com");
-
+```
 
 
 
@@ -510,6 +524,7 @@ return (
 
 To wbudowany obiekt w JavaScript, który pozwala stworzyć "otoczkę" (obiekt pośredniczący) wokół innego obiektu lub tablicy, aby przechwytywać i modyfikować jego zachowanie. Posiada tzw. przechwytywacze (ang. handlers) takie jak get i set, które można skonfigurować do przechwytywania operacji takich jak odczyt lub zapis właściwości, wywołanie funkcji, iteracja
 
+```
 Przyklad proxy:
 const osoba = {
   imie: "Ala",
@@ -528,6 +543,7 @@ const proxyOsoba = new Proxy(osoba, {
     return true; // musimy zwrócić true, aby operacja się powiodła
   }
 });
+```
 
 // Test działania:
 console.log(proxyOsoba.imie);      // -> log: Odczytywanie właściwości: imie
@@ -551,20 +567,21 @@ To funkcja, która przyjmuje komponent jako argument i zwraca nowy, ulepszony ko
 
 
 HOC:
-
+```
 const withUser = (Component) => (props) => {
   const user = { name: "Jan" };
   return <Component {...props} user={user} />;
 };
-
+```
 
 Hook:
 
+```
 function MyComponent() {
   const user = useUser(); // np. customowy hook
   return <div>Witaj, {user.name}</div>;
 }
-
+```
 
 
 
@@ -722,6 +739,7 @@ Miksiny – to fragment kodu, który można wielokrotnie wykorzystywać w różn
 
 
 Na przyklad:
+```
 sass
     @mixin border-radius($radius) {
       -webkit-border-radius: $radius;
@@ -732,7 +750,7 @@ sass
     .button {
       @include border-radius(5px);
     }
-
+```
 ##Mikroserwisy
 
 Mikroserwisy to podejście do tworzenia aplikacji jako zestawu niezależnie wdrażanych usług, które nie są od siebie zależne. Aplikacja jest budowana jako kombinacja mikroserwisów, z których każdy odpowiada za określoną funkcjonalność w swojej domenie (obszarze tematycznym). Mikroserwisy komunikują się ze sobą za pomocą interfejsów API, takich jak REST.
@@ -806,7 +824,7 @@ Każdy z tych modułów:
 
 
 ##Uruchomenie swojego wlasnego servera 
-
+```
 app.listen(3000, () => {
     console.log("API dziala na http://localhost:3000");
 })
@@ -865,7 +883,7 @@ if (... !== undefined), żeby nie nadpisać pola przypadkowo pustą wartością
 ##Uruchomic server w TS
             nazwa servera
 npx ts-node dev-server.ts
-
+```
 
 ## Placeholder nie dziala w input 
 Powodem byc moze: Input wypełniony spacją (" " zamiast "") — wtedy placeholder nie pokaże się
