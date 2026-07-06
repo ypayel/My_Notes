@@ -122,7 +122,7 @@ Event Loop zarządza kolejką zadań, która zawiera makro i mikrotaski.
 Mikrotaski (np. Promise) mają wyższy priorytet. Są wykonywane po każdym synchronizowanym zadaniu, ale przed makrotaskami.
 Makrotaski to głównie zdarzenia, takie jak setTimeout(), setInterval() itp
 
-```jsx
+
 console.log('Start');
 
 fetch('https://api.example.com/data')
